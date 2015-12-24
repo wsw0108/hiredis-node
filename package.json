@@ -4,7 +4,9 @@
   "version": "0.4.1-maptalks1",
   "homepage": "http://github.com/redis/hiredis-node",
   "author": "Jan-Erik Rediger <janerik@fnordig.de>",
-  "contributors": ["Pieter Noordhuis <pcnoordhuis@gmail.com>" ],
+  "contributors": [
+    "Pieter Noordhuis <pcnoordhuis@gmail.com>"
+  ],
   "main": "hiredis",
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build",
@@ -34,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/redis/hiredis-node/issues"
   },
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "aws-sdk": "^2.2.26"
+  }
 }
