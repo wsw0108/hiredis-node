@@ -1,18 +1,29 @@
 {
   "name": "hiredis",
   "description": "Wrapper for reply processing code in hiredis",
-  "version": "0.4.1",
+  "version": "0.4.1-maptalks1",
   "homepage": "http://github.com/redis/hiredis-node",
   "author": "Jan-Erik Rediger <janerik@fnordig.de>",
   "contributors": ["Pieter Noordhuis <pcnoordhuis@gmail.com>" ],
   "main": "hiredis",
   "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
     "test": "node test/reader.js && node test/writer.js"
   },
+  "binary": {
+    "module_name": "hiredis",
+    "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
+    "host": "https://maptalks-node-bin.s3.amazonaws.com",
+    "remote_path": "./{module_name}/v{version}/",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
+  },
   "dependencies": {
-    "bindings": "*",
+    "node-pre-gyp": "^0.6.17",
     "nan": "^2.0.5"
   },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
   "engines": {
     "node": ">= 0.8.0"
   },
